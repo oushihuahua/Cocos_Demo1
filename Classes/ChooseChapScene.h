@@ -1,5 +1,5 @@
-#ifndef ChooseChap_H
-#define ChooseChap_H
+#ifndef ChooseChapScene_H
+#define ChooseChapScene_H
 #include "cocos2d.h"
 #include "editor-support/cocostudio/CCSGUIReader.h"
 #include "cocostudio/CocoStudio.h"
@@ -8,13 +8,13 @@ using namespace cocos2d::ui;
 using namespace cocostudio;
 
 USING_NS_CC;
-class ChooseChap : public Scene
+class ChooseChapScene : public Scene
 {
 public:
-	ChooseChap();
-	~ChooseChap();
+	ChooseChapScene();
+	~ChooseChapScene();
 	//static Scene* scene();//创建一个场景 这个方法中会创建BeginScene的layer
-	CREATE_FUNC(ChooseChap);
+	CREATE_FUNC(ChooseChapScene);
 	virtual bool init();
 	//virtual void onExit() override;
 

@@ -1,19 +1,19 @@
-#include "ChooseChap.h"
+#include "ChooseChapScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "editor-support/cocostudio/CCSGUIReader.h"
 #include "ui/CocosGUI.h"
 #include "ChooseChapLayer.h"
 
 
-ChooseChap::ChooseChap()
+ChooseChapScene::ChooseChapScene()
 {
 	
 }
-ChooseChap::~ChooseChap()
+ChooseChapScene::~ChooseChapScene()
 {
 }
 
-bool ChooseChap::init()
+bool ChooseChapScene::init()
 {
 	if (!Scene::init())
 	{
