@@ -24,10 +24,16 @@
     <ClCompile Include="..\Classes\HomeScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ChooseChap.cpp">
+    <ClCompile Include="..\Classes\ChooseChapLayer.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ChooseChapLayer.cpp">
+    <ClCompile Include="..\Classes\ChooseChapScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Draw.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SnowLayer.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,10 +50,16 @@
     <ClInclude Include="..\Classes\HomeScene.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ChooseChap.h">
+    <ClInclude Include="..\Classes\ChooseChapLayer.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ChooseChapLayer.h">
+    <ClInclude Include="..\Classes\ChooseChapScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Draw.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SnowLayer.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

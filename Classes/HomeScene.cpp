@@ -5,8 +5,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "editor-support/cocostudio/CCSGUIReader.h"
 #include "ui/CocosGUI.h"
-#include "ChooseChap.h"
-#include "ChooseChapLayer.h"
+#include "ChooseChapScene.h"
 using namespace cocos2d::ui;
 using namespace cocostudio;
 
@@ -109,7 +108,7 @@ void HomeScene::JumptoGuanqia(Ref* sender, TouchEventType type)
     //CCScene* psScene = CCTransitionShrinkGrow::create(1, s);  
 
 	
-    auto ChooseChapS =ChooseChap::create(); 
+	auto ChooseChapS = ChooseChapScene::create();
 	if (ChooseChapS)
 	{  
 		CCDirector::sharedDirector()->replaceScene(ChooseChapS);

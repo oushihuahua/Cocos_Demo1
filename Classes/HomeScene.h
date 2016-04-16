@@ -18,7 +18,7 @@ public:
 	virtual void onExit() override;
 
 private:
-	bool onContactBegin(PhysicsContact& contact);
+	//bool onContactBegin(PhysicsContact& contact);
 	//void logic(float dt);
 	//BackgroundLayer* m_backgroundLayer;
 	void createOprUI();
