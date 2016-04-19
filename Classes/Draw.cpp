@@ -3,7 +3,7 @@
 #include "editor-support/cocostudio/CCSGUIReader.h"
 #include "ui/CocosGUI.h"
 #include "SnowLayer.h"
-
+#include "DrawUI.h"
 //using namespace 
 using namespace cocos2d::ui;
 using namespace cocostudio;
@@ -25,7 +25,12 @@ bool Draw :: init()
 	{
 		return false;
 	}
+
+	
+	auto layer = SnowLayer::create();
+	this->addChild(layer);
 	return true;
+
 }
 
 
@@ -33,11 +38,11 @@ bool Draw :: init()
 
 bool Draw::initChap()
 {
-	if (this->Chap == SnowChap)
+	/*if (this->Chap == SnowChap)
 	{
 		auto layer = SnowLayer::create();
-		this->addChild(layer);
-	}
+		this->addChild(layer,1);
+	}*/
 	return true;
 }
 

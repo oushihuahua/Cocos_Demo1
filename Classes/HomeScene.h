@@ -22,7 +22,7 @@ private:
 	//void logic(float dt);
 	//BackgroundLayer* m_backgroundLayer;
 	void createOprUI();
-	void JumptoGuanqia(Ref* sender, TouchEventType type);
+	void Jumptocreate(Ref* sender, TouchEventType type);
 	/*void moveDown(Ref* sender, TouchEventType type);
 	void moveFart(Ref* sender, TouchEventType type);*/
 	//Player m_Player;

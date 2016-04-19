@@ -31,10 +31,22 @@ public:
 	virtual void onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Event  *event);
 	//void createOprUI();
 	CCSprite* getSector();
+	Sprite* pEraser;
+	Sprite* pFlower;
+	Sprite* pMask;
+
 private:
 	Sprite* m_bg1;
+	Sprite* m_bg2;
+	bool generated;
+	Size masksize;
+	//Sprite* m_bg1;
 	RenderTexture* pRt;
-	Sprite* pEraser;
+	RenderTexture* pRt1;
+	bool ChangeBG();
+	Sprite* bignode;
+	cocos2d::Vector<cocos2d::Sprite*> list;
+	//RenderTexture* pRt1;
 	
 
 

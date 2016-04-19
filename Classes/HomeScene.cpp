@@ -6,6 +6,7 @@
 #include "editor-support/cocostudio/CCSGUIReader.h"
 #include "ui/CocosGUI.h"
 #include "ChooseChapScene.h"
+#include "Draw.h"
 using namespace cocos2d::ui;
 using namespace cocostudio;
 
@@ -63,22 +64,6 @@ bool HomeScene::init()
 		return false;
 	}
 	createOprUI();
-
-	/*
-
-	Size visbleSize = Director::getInstance()->getVisibleSize();
-	m_player = Player::create();
-	m_player->setPosition(Point(visbleSize.width*0.5f, visbleSize.height*0.5f));
-	this->addChild(m_player, 5);
-	/*创建UI
-	createOprUI();
-	/*碰撞监听
-	/*auto contactListener = EventListenerPhysicsContact::create();
-	contactListener->onContactBegin=CC_CALLBACK_1
-	this->schedule(schedule_selector(BeginScene::logic));
-	//BeginScene这个layer每桢执行update
-	*/
-	//this->schedule(schedule_selector(TestScene::logic));
 	return true;
 }
 
@@ -88,30 +73,26 @@ void HomeScene::onExit()
 }
 void HomeScene::createOprUI()
 {
-	auto UI = cocostudio::GUIReader::getInstance()->widgetFromJsonFile("NewUi_1.ExportJson");
+	auto UI = cocostudio::GUIReader::getInstance()->widgetFromJsonFile("HomeUI1_1.ExportJson");
 	this->addChild(UI);
 	
-	Button* Button_guanqia = (Button*)Helper::seekWidgetByName(UI, "Button_guanqia");
-	Button_guanqia->addTouchEventListener(this, toucheventselector(HomeScene::JumptoGuanqia));
+	Button* Button_create = (Button*)Helper::seekWidgetByName(UI, "Button_Create");
+	Button_create->addTouchEventListener(this, toucheventselector(HomeScene::Jumptocreate));
 
-	//Button* quickMoveBtn = (Button*)Helper::seekWidgetByName(UI, "quickMoveBtn");
+
+	Button* Button_guanqia = (Button*)Helper::seekWidgetByName(UI, "Button_Task");
+	Button_guanqia->addTouchEventListener(this, toucheventselector(HomeScene::Jumptocreate));
 
 	//Button* leftBtn = (Button*)Helper::seekWidgetByName(UI, "leftBtn");
 
 	
 }
-void HomeScene::JumptoGuanqia(Ref* sender, TouchEventType type)
+void HomeScene::Jumptocreate(Ref* sender, TouchEventType type)
 {
-	// "close" menu item clicked  
-    
-  
-    //CCScene* psScene = CCTransitionShrinkGrow::create(1, s);  
-
-	
-	auto ChooseChapS = ChooseChapScene::create();
-	if (ChooseChapS)
+	auto Draw = Draw::create();
+	if (Draw)
 	{  
-		CCDirector::sharedDirector()->replaceScene(ChooseChapS);
+		CCDirector::sharedDirector()->replaceScene(Draw);
 	}     
     //CCDirector::sharedDirector()->end();  
 

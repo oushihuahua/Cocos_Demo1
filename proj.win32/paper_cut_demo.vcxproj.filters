@@ -36,6 +36,9 @@
     <ClCompile Include="..\Classes\SnowLayer.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\DrawUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -60,6 +63,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\SnowLayer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawUI.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

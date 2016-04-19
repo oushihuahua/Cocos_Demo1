@@ -148,6 +148,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\ChooseChapScene.cpp" />
     <ClCompile Include="..\Classes\ChooseChapLayer.cpp" />
     <ClCompile Include="..\Classes\Draw.cpp" />
+    <ClCompile Include="..\Classes\DrawUI.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\HomeScene.cpp" />
     <ClCompile Include="..\Classes\SnowLayer.cpp" />
@@ -161,6 +162,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\HomeScene.h" />
     <ClInclude Include="..\Classes\SnowLayer.h" />
+    <ClInclude Include="DrawUI.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
