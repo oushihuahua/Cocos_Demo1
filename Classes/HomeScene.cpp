@@ -89,11 +89,14 @@ void HomeScene::createOprUI()
 }
 void HomeScene::Jumptocreate(Ref* sender, TouchEventType type)
 {
-	auto Draw = Draw::create();
-	if (Draw)
-	{  
-		CCDirector::sharedDirector()->replaceScene(Draw);
-	}     
+	if (type == ui::TouchEventType::TOUCH_EVENT_BEGAN)
+	{
+		auto Draw = Draw::create();
+		if (Draw)
+		{
+			CCDirector::sharedDirector()->replaceScene(Draw);
+		}
+	}
     //CCDirector::sharedDirector()->end();  
 
 }

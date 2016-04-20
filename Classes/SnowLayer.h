@@ -33,6 +33,7 @@ public:
 	CCSprite* getSector();
 	Sprite* pEraser;
 	Sprite* pFlower;
+	Sprite* pFlower1;
 	Sprite* pMask;
 
 private:

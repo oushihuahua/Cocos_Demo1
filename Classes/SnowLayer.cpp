@@ -26,9 +26,15 @@ bool SnowLayer::init()
 	}
 	generated = false;
 	bignode = Sprite::create();
+	this->addChild(bignode);
+
+	this->list =Vector< Sprite* >();
+
 	Size visibleSize = Director::getInstance()->getVisibleSize();
+
 	auto m_bg1 = Sprite::create("DrawBG_1.png");
 	auto m_bg2 = Sprite::create("DrawBG_2.png");
+
 	m_bg2->setVisible(false);
 	this->addChild(m_bg1);
 	this->addChild(m_bg2);	
@@ -59,19 +65,25 @@ bool SnowLayer::init()
 	pRt1->setPosition(visibleSize.width / 2, visibleSize.height / 2);
 	this->addChild(pRt1);
 
+	pFlower1 = CCSprite::create("passive1.png");
+	CCAssert(pFlower1, "Flower sprite is invalid");
+	pFlower1->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+	pFlower1->retain();
+
 	//创建遮罩图片
 	pMask = CCSprite::create("mask1.png");
 	CCAssert(pMask, "mask sprite is invalid");
 	pMask->getTexture()->setAliasTexParameters();
 	masksize = pMask->getContentSize();
-	
 	pMask->setPosition(visibleSize.width / 2, visibleSize.height / 2);//锚点在中间
-	Point origin = pMask->getPosition();
+	pMask->retain();
+
 	//this->addChild(pMask);
 	//创建被遮罩图片
 	pFlower = CCSprite::create("passive.png");
 	CCAssert(pFlower, "Flower sprite is invalid");
 	pFlower->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+	pFlower->retain();
 
 	//this->addChild(pFlower);
 	//先设置好 遮罩精灵 和 被遮罩精灵 在被渲染的时候采用什么样的颜色混合法则
@@ -144,8 +156,7 @@ void SnowLayer::onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Even
 			{				
 				generated = true;
 				//ChangeBG();
-			//	pRt->setVisible(false);
-				
+			   
 				
 				for (int i = 0; i < 12; ++i){
 					Sprite* sprite = Sprite::createWithTexture(this->getSector()->getTexture());
@@ -158,13 +169,14 @@ void SnowLayer::onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Even
 					}
 					list.pushBack(sprite);
 				}
-
+				pRt->setVisible(false);
 				for (auto& sprite : list)
 				{
 
 					sprite->setFlipY(true);
 					sprite->setPosition(ccp(visibleSize.width / 2, visibleSize.height / 2));
-					sprite->setScale(0.5f);					
+					sprite->setScale(0.5f);			
+					int a = bignode->getChildrenCount();
 					bignode->addChild(sprite);
 				}
 				list.clear();
@@ -173,27 +185,23 @@ void SnowLayer::onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Even
 				//创建遮罩图片
 				//this->addChild(pMask);
 				//创建被遮罩图片
-				Sprite *pFlower = CCSprite::create("passive1.png");
-				CCAssert(pFlower, "Flower sprite is invalid");
-				pFlower->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+				
 				//this->addChild(pFlower);
 				//先设置好 遮罩精灵 和 被遮罩精灵 在被渲染的时候采用什么样的颜色混合法则
 				BlendFunc maskBlend = { GL_ONE, GL_ZERO };
 				BlendFunc flowerBlend = { GL_DST_ALPHA, GL_ZERO };
 				bignode->setBlendFunc(maskBlend);
-				pFlower->setBlendFunc(flowerBlend);
-				pRt1->begin();
-				bignode->visit();//stacjoverflow
-				pFlower->visit();
+				pFlower1->setBlendFunc(flowerBlend);
+				pRt1->beginWithClear(0,0,0,0);
+				bignode->visit();//stackoverflow
+				pFlower1->visit();
 				pRt1->end();
-				bignode->setVisible(false);
+				pRt1->setVisible(true);
 				this->bignode->removeAllChildren();
-				
-			
 			}
 			else if (touchPoint.x >= 741 && touchPoint.x <=902 && touchPoint.y >= 396 && touchPoint.y <= 457)//undo按钮 重新渲染
 			{
-				pRt->begin();
+				pRt->beginWithClear(0,0,0,0);
 				pMask->visit();
 				pFlower->visit();
 				pRt->end();
@@ -219,8 +227,7 @@ void SnowLayer::onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Even
 		{
 			if (touchPoint.y <= 200 && touchPoint.x <= 200)//返回
 			{
-				pRt1->setVisible(false);
-				
+				pRt1->setVisible(false);				
 				pRt->setVisible(true);
 				generated = false;
 			}

@@ -1,35 +1,26 @@
-﻿生成启动时间为 2016/4/19 21:55:07。
+﻿生成启动时间为 2016/4/20 15:32:16。
      1>项目“E:\cocosproject\paper_cut_demo\proj.win32\paper_cut_demo.vcxproj”在节点 3 上(Build 个目标)。
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos /I"E:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos\editor-support" /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\ /IE:\cocosproject\paper_cut_demo\proj.win32\ /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos\audio\include /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external\chipmunk\include\chipmunk /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\extensions /I..\Classes /I.. /I"E:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos\editor-support" /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos\platform /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos\platform\desktop /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external\glfw3\include\win32 /I"E:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external\freetype2\include\win32\freetype2 /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external\freetype2\include\win32\ /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USE_MATH_DEFINES /D GL_GLEXT_PROTOTYPES /D CC_ENABLE_CHIPMUNK_INTEGRATION=1 /D COCOS2D_DEBUG=1 /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /D _USING_V110_SDK71_ /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc120.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\HomeScene.cpp ..\Classes\SnowLayer.cpp
-         HomeScene.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos /I"E:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos\editor-support" /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\ /IE:\cocosproject\paper_cut_demo\proj.win32\ /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos\audio\include /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external\chipmunk\include\chipmunk /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\extensions /I..\Classes /I.. /I"E:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos\editor-support" /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos\platform /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\cocos\platform\desktop /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external\glfw3\include\win32 /I"E:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external\freetype2\include\win32\freetype2 /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external\freetype2\include\win32\ /IE:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\..\..\external /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USE_MATH_DEFINES /D GL_GLEXT_PROTOTYPES /D CC_ENABLE_CHIPMUNK_INTEGRATION=1 /D COCOS2D_DEBUG=1 /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /D _USING_V110_SDK71_ /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc120.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\SnowLayer.cpp
          SnowLayer.cpp
-     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.h(33): warning C4996: 'cocos2d::CCSprite': 被声明为已否决 (..\Classes\SnowLayer.cpp)
+     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.h(33): warning C4996: 'cocos2d::CCSprite': 被声明为已否决
                  e:\cocosproject\paper_cut_demo\cocos2d\cocos\deprecated\ccdeprecated.h(680) : 参见“cocos2d::CCSprite”的声明
-     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.h(28): warning C4996: 'cocos2d::CCSprite': 被声明为已否决 (..\Classes\SnowLayer.cpp)
+     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.h(28): warning C4996: 'cocos2d::CCSprite': 被声明为已否决
                  e:\cocosproject\paper_cut_demo\cocos2d\cocos\deprecated\ccdeprecated.h(680) : 参见“cocos2d::CCSprite”的声明
-     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(35): warning C4996: 'cocos2d::ccp': 被声明为已否决
+     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(41): warning C4996: 'cocos2d::ccp': 被声明为已否决
                  e:\cocosproject\paper_cut_demo\cocos2d\cocos\deprecated\ccdeprecated.h(49) : 参见“cocos2d::ccp”的声明
-     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(36): warning C4996: 'cocos2d::ccp': 被声明为已否决
+     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(42): warning C4996: 'cocos2d::ccp': 被声明为已否决
                  e:\cocosproject\paper_cut_demo\cocos2d\cocos\deprecated\ccdeprecated.h(49) : 参见“cocos2d::ccp”的声明
-     1>e:\cocosproject\paper_cut_demo\classes\homescene.cpp(45): warning C4996: 'cocos2d::ccp': 被声明为已否决
+     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(163): warning C4305: “参数”: 从“double”到“float”截断
+     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(163): warning C4996: 'cocos2d::ccp': 被声明为已否决
                  e:\cocosproject\paper_cut_demo\cocos2d\cocos\deprecated\ccdeprecated.h(49) : 参见“cocos2d::ccp”的声明
-     1>e:\cocosproject\paper_cut_demo\classes\homescene.cpp(80): warning C4996: 'cocos2d::ui::Widget::addTouchEventListener': 被声明为已否决
-                 e:\cocosproject\paper_cut_demo\cocos2d\cocos\ui\uiwidget.h(307) : 参见“cocos2d::ui::Widget::addTouchEventListener”的声明
-     1>e:\cocosproject\paper_cut_demo\classes\homescene.cpp(84): warning C4996: 'cocos2d::ui::Widget::addTouchEventListener': 被声明为已否决
-                 e:\cocosproject\paper_cut_demo\cocos2d\cocos\ui\uiwidget.h(307) : 参见“cocos2d::ui::Widget::addTouchEventListener”的声明
-     1>e:\cocosproject\paper_cut_demo\classes\homescene.cpp(95): warning C4996: 'cocos2d::Director::sharedDirector': 被声明为已否决
-                 e:\cocosproject\paper_cut_demo\cocos2d\cocos\base\ccdirector.h(138) : 参见“cocos2d::Director::sharedDirector”的声明
-     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(152): warning C4305: “参数”: 从“double”到“float”截断
-     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(152): warning C4996: 'cocos2d::ccp': 被声明为已否决
-                 e:\cocosproject\paper_cut_demo\cocos2d\cocos\deprecated\ccdeprecated.h(49) : 参见“cocos2d::ccp”的声明
-     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(157): warning C4996: 'cocos2d::Sprite::setFlipX': 被声明为已否决
+     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(168): warning C4996: 'cocos2d::Sprite::setFlipX': 被声明为已否决
                  e:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\ccsprite.h(375) : 参见“cocos2d::Sprite::setFlipX”的声明
-     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(165): warning C4996: 'cocos2d::Sprite::setFlipY': 被声明为已否决
+     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(176): warning C4996: 'cocos2d::Sprite::setFlipY': 被声明为已否决
                  e:\cocosproject\paper_cut_demo\cocos2d\cocos\2d\ccsprite.h(404) : 参见“cocos2d::Sprite::setFlipY”的声明
-     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(166): warning C4996: 'cocos2d::ccp': 被声明为已否决
+     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(177): warning C4996: 'cocos2d::ccp': 被声明为已否决
                  e:\cocosproject\paper_cut_demo\cocos2d\cocos\deprecated\ccdeprecated.h(49) : 参见“cocos2d::ccp”的声明
-     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(233): warning C4996: 'cocos2d::CCSprite': 被声明为已否决
+     1>e:\cocosproject\paper_cut_demo\classes\snowlayer.cpp(240): warning C4996: 'cocos2d::CCSprite': 被声明为已否决
                  e:\cocosproject\paper_cut_demo\cocos2d\cocos\deprecated\ccdeprecated.h(680) : 参见“cocos2d::CCSprite”的声明
        Link:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\cocosproject\paper_cut_demo\proj.win32\Debug.win32\paper_cut_demo.exe" /INCREMENTAL /NOLOGO /LIBPATH:E:\cocosproject\paper_cut_demo\proj.win32\Debug.win32\ /LIBPATH:E:\cocosproject\paper_cut_demo\proj.win32\Debug.win32\ opengl32.lib glew32.lib libzlib.lib libwebp.lib libiconv.lib freetype.lib winmm.lib ws2_32.lib libbox2d.lib libSpine.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\cocosproject\paper_cut_demo\proj.win32\Debug.win32\paper_cut_demo.pdb" /SUBSYSTEM:WINDOWS,"5.01" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\cocosproject\paper_cut_demo\proj.win32\Debug.win32\paper_cut_demo.lib" /MACHINE:X86 /SAFESEH Debug.win32\game.res
@@ -56,4 +47,4 @@
 
 生成成功。
 
-已用时间 00:01:03.34
+已用时间 00:01:08.37
