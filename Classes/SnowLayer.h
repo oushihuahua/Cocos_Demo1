@@ -35,16 +35,19 @@ public:
 	Sprite* pFlower;
 	Sprite* pFlower1;
 	Sprite* pMask;
-
-private:
-	Sprite* m_bg1;
-	Sprite* m_bg2;
+	//void setPreview();
+	//void setUndo();
 	bool generated;
+private:
+	Rect preview;
+	Rect back;
+	Rect undo;
+	Sprite* m_bg1;
 	Size masksize;
 	//Sprite* m_bg1;
 	RenderTexture* pRt;
 	RenderTexture* pRt1;
-	bool ChangeBG();
+	bool ChangeMenu();
 	Sprite* bignode;
 	cocos2d::Vector<cocos2d::Sprite*> list;
 	//RenderTexture* pRt1;

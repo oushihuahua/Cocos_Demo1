@@ -40,7 +40,6 @@ Scene* HomeScene::scene()
 	node->setPosition(Point(visibleSize.width / 2, visibleSize.height / 2));
 	node->setPhysicsBody(body);
 	scene->addChild(node);
-
 	auto background = Sprite::create("Home_bg.png");
 	background->setPosition(ccp(background->getContentSize().width / 2, background->getContentSize().height / 2));
 	scene->addChild(background, 0);
@@ -73,7 +72,7 @@ void HomeScene::onExit()
 }
 void HomeScene::createOprUI()
 {
-	auto UI = cocostudio::GUIReader::getInstance()->widgetFromJsonFile("HomeUI1_1.ExportJson");
+	auto UI = cocostudio::GUIReader::getInstance()->widgetFromJsonFile("UISnowL_1.ExportJson");
 	this->addChild(UI);
 	
 	Button* Button_create = (Button*)Helper::seekWidgetByName(UI, "Button_Create");

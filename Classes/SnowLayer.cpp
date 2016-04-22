@@ -18,12 +18,21 @@ SnowLayer::~SnowLayer()
 }
 
 
+
 bool SnowLayer::init()
 {
 	if (!Layer::init())
 	{
 		return false;
 	}
+
+	preview = CCRectMake(137, 731, 245, 81);
+	back = CCRectMake(179, 731, 162, 81);
+	undo = CCRectMake(178, 603, 161, 81);
+
+	
+	
+
 	generated = false;
 	bignode = Sprite::create();
 	this->addChild(bignode);
@@ -32,22 +41,30 @@ bool SnowLayer::init()
 
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 
-	auto m_bg1 = Sprite::create("DrawBG_1.png");
-	auto m_bg2 = Sprite::create("DrawBG_2.png");
-
-	m_bg2->setVisible(false);
+	auto m_bg1 = Sprite::create("Draw_bg.png");
 	this->addChild(m_bg1);
-	this->addChild(m_bg2);	
-	m_bg2->setPosition(ccp(visibleSize.width / 2, visibleSize.height / 2));
 	m_bg1->setPosition(ccp(visibleSize.width / 2, visibleSize.height / 2));
 
 	
-	EventDispatcher* eventDispatcher = Director::getInstance()->getEventDispatcher();
+	auto menu1 = Sprite::create("menu1.png");
+	menu1->setAnchorPoint(ccp(0, 1));
+	menu1->setPosition(ccp(140, 803));
+	this->addChild(menu1,0,"menu1");
+	auto menu2 = Sprite::create("menu2.png");
+	menu2->setAnchorPoint(ccp(0, 1));
+	menu2->setPosition(ccp(140, 803));
+	this->addChild(menu2,0,"menu2");
+	ActionInterval * fadeout = FadeOut::create(0.01);
+	this->getChildByName("menu2")->runAction(fadeout);
 
+	EventDispatcher* eventDispatcher = Director::getInstance()->getEventDispatcher();
 	auto listen = EventListenerTouchAllAtOnce::create();
 	listen->onTouchesBegan = CC_CALLBACK_2(SnowLayer::onTouchesBegan, this);
 	listen->onTouchesMoved = CC_CALLBACK_2(SnowLayer::onTouchesMoved, this);
 	eventDispatcher->addEventListenerWithSceneGraphPriority(listen,this);
+
+
+	
 /*	auto m_bg1 = Sprite::create("SnowChap.png");
 	m_bg1->setPosition(ccp(visibleSize.width / 2, visibleSize.height / 2));
 	this->addChild(m_bg1, 0);*/
@@ -112,6 +129,10 @@ bool SnowLayer::init()
 	/*Point是Vec2的别名 Vec2属性：float x,float y*/
 	/*创建边缘锯齿*/
 	//this->addTouchListener
+
+	
+
+
 	return true;
 }
 void SnowLayer::onExit()
@@ -142,6 +163,10 @@ void SnowLayer::onTouchesMoved(const std::vector<Touch*>& touches, cocos2d::Even
 		}
 	}
 }
+
+
+
+
 void SnowLayer::onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Event  *event)
 {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
@@ -152,16 +177,23 @@ void SnowLayer::onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Even
 		Point touchPoint = touch->getLocation();
 		if (generated == false)//bg1界面
 		{
-			if (touchPoint.y <= 200 && touchPoint.x <= 200 )// preview按钮
+			if (preview.containsPoint(touchPoint))// preview按钮
 			{				
 				generated = true;
 				//ChangeBG();
-			   
 				
+				ActionInterval * fadeout = FadeOut::create(0.5);
+				ActionInterval * delaytime = DelayTime::create(0.3);
+				ActionInterval * fadein = FadeIn::create(0.5);
+				this->getChildByName("menu1")->runAction(fadeout);
+				auto action = Sequence::create(delaytime, fadein, NULL);
+				this->getChildByName("menu2")->runAction(action);
+				
+
 				for (int i = 0; i < 12; ++i){
 					Sprite* sprite = Sprite::createWithTexture(this->getSector()->getTexture());
 					sprite->setAnchorPoint(ccp(0.5, 59.5 / 1080));
-					sprite->getTexture()->setAliasTexParameters();
+					//sprite->getTexture()->setAliasTexParameters();
 					sprite->setRotation(i * 30);
 					//	sprite->setBlendFunc(maskBlend);
 					if (i % 2 == 1){
@@ -199,7 +231,7 @@ void SnowLayer::onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Even
 				pRt1->setVisible(true);
 				this->bignode->removeAllChildren();
 			}
-			else if (touchPoint.x >= 741 && touchPoint.x <=902 && touchPoint.y >= 396 && touchPoint.y <= 457)//undo按钮 重新渲染
+			else if (undo.containsPoint(touchPoint))//undo按钮 重新渲染
 			{
 				pRt->beginWithClear(0,0,0,0);
 				pMask->visit();
@@ -225,8 +257,14 @@ void SnowLayer::onTouchesBegan(const std::vector<Touch*>& touches, cocos2d::Even
 		}
 		else if (generated==true)//preview界面
 		{
-			if (touchPoint.y <= 200 && touchPoint.x <= 200)//返回
+			if (back.containsPoint(touchPoint))//返回
 			{
+				ActionInterval * fadeout = FadeOut::create(0.5);
+				ActionInterval * delaytime = DelayTime::create(0.3);
+				ActionInterval * fadein = FadeIn::create(0.5);
+				this->getChildByName("menu2")->runAction(fadeout);
+				auto action = Sequence::create(delaytime, fadein, NULL);
+				this->getChildByName("menu1")->runAction(action);
 				pRt1->setVisible(false);				
 				pRt->setVisible(true);
 				generated = false;
@@ -242,20 +280,7 @@ CCSprite * SnowLayer::getSector()
 	return Sprite::createWithTexture(pRt->getSprite()->getTexture());
 }
 
-bool SnowLayer::ChangeBG()
+bool SnowLayer::ChangeMenu()
 {
-	if (generated == false)//换成bg2
-	{
-		m_bg2->setVisible(true);
-		m_bg1->setVisible(false);
-		generated = true;
-		return true;
-	}
-	else
-	{
-		m_bg1->setVisible(true);
-		m_bg2->setVisible(false);
-		generated = false;
-		return true;
-	}
+	return true;
 }

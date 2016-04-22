@@ -7,8 +7,6 @@
 using namespace cocos2d::ui;
 using namespace cocostudio;
 
-
-
 DrawUI::DrawUI()
 {
 
@@ -24,37 +22,38 @@ bool DrawUI::init()
 	{
 		return false;
 	}
-	Size visibleSize = Director::getInstance()->getVisibleSize();
-	this->setSwallowsTouches(false);
-	this->setTouchEnabled(true);
-	/*auto m_bg1 = Sprite::create("SnowChap.png");
-	m_bg1->setPosition(ccp(visibleSize.width / 2, visibleSize.height / 2));
-	this->addChild(m_bg1,0);*/
-
-	auto button_generate = MenuItemImage::create();
-	button_generate->setNormalImage(Sprite::create("generate.png"));
-	button_generate->setPosition(100, 200);
-	this->addChild(button_generate);
-
-
-
-
-	EventDispatcher* eventDispatcher = Director::getInstance()->getEventDispatcher();
-
-	auto listen = EventListenerTouchOneByOne::create();
-	listen->onTouchBegan = CC_CALLBACK_2(DrawUI::onTouchBegan, this);
-	return true;
+	createOprUI();
 }
-void DrawUI::onExit()
+
+void DrawUI::createOprUI()
 {
-	Layer::onExit();
+	auto UI = cocostudio::GUIReader::getInstance()->widgetFromJsonFile("DrawDraw_1.ExportJson");
+	this->addChild(UI);
+
+	Button* Button_preview = (Button*)Helper::seekWidgetByName(UI, "Button_1");
+	Button_preview->addTouchEventListener(this, toucheventselector(DrawUI::setPreview));
+
+
+	Button* Button_undo = (Button*)Helper::seekWidgetByName(UI, "Button_2");
+	Button_undo->addTouchEventListener(this, toucheventselector(DrawUI::setUndo));
 }
-
-
-bool DrawUI::onTouchBegan(Touch *  touch,Event *  unused_event)
+void DrawUI::setPreview(Ref* sender, TouchEventType type)
 {
-	return true;
+	if (type == ui::TouchEventType::TOUCH_EVENT_BEGAN)
+	{
+
+	}
+	//CCDirector::sharedDirector()->end();  
+
 }
 
+void DrawUI::setUndo(Ref* sender, TouchEventType type)
+{
+	if (type == ui::TouchEventType::TOUCH_EVENT_BEGAN)
+	{
+	}
+	//CCDirector::sharedDirector()->end();  
+
+}
 
 

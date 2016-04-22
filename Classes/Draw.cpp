@@ -24,13 +24,17 @@ bool Draw :: init()
 	if (!Scene::init())
 	{
 		return false;
-	}
-
+	}	
 	
 	auto layer = SnowLayer::create();
 	this->addChild(layer);
-	return true;
+	
+	//auto UIlayer = DrawUI::create();
+	//this->addChild(UIlayer);
 
+
+	
+	return true;
 }
 
 
